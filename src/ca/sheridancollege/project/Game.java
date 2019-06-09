@@ -1,7 +1,7 @@
 /**
  * SYST 17796 Project Winter 2019 Base code.
  * Students can modify and extend to implement their game.
- * 
+ *
  * Patrick Ryan and Karam Fasih
  * June 9, 2019
  */
@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 public abstract class Game {
 
-    private final String gameName;//the title of the game
+    private final String gameName;
     private ArrayList<Player> players;// the players of the game
 
     public Game(String givenName) {
@@ -33,20 +33,6 @@ public abstract class Game {
     }
 
     /**
-     * @return the players of this game
-     */
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
-
-    /**
-     * @param players the players of this game
-     */
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
-
-    /**
      * Play the game. This might be one method or many method calls depending on
      * your game.
      */
@@ -57,5 +43,17 @@ public abstract class Game {
      * player.
      */
     public abstract void declareWinner();
+
+    public ArrayList<Player> getPlayers() {
+        return this.players;
+    }
+
+    /**
+     *
+     * @param players
+     */
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
+    }
 
 }//end class

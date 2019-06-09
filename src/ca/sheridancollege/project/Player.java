@@ -1,10 +1,10 @@
 /**
  * SYST 17796 Project Winter 2019 Base code.
  * Students can modify and extend to implement their game.
- * 
+ *
  * Patrick Ryan and Karam Fasih
  * June 9, 2019
- * 
+ *
  */
 package ca.sheridancollege.project;
 
