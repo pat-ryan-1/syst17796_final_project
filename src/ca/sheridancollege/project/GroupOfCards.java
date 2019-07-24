@@ -1,6 +1,5 @@
 /**
- * SYST 17796 Project Winter 2019 Base code.
- * Students can modify and extend to implement their game.
+ * SYST 17796 Project Winter 2019
  *
  * Patrick Ryan and Karam Fasih
  * June 9, 2019
@@ -17,13 +16,13 @@ import java.util.Collections;
  *
  * @author dancye
  */
-public class GroupOfCards {
+public abstract class GroupOfCards {
 
     private int size;
-    private ArrayList<Card> cards;//the size of the grouping
+    private ArrayList<Card> cards;
 
-    public GroupOfCards(int givenSize) {
-        size = givenSize;
+    public GroupOfCards(int size) {
+        this.size = size;
     }
 
     /**
@@ -31,7 +30,7 @@ public class GroupOfCards {
      *
      * @return the group of cards.
      */
-    public ArrayList<Card> showCards() {
+    public final ArrayList<Card> getCards() {
         return cards;
     }
 
@@ -42,15 +41,19 @@ public class GroupOfCards {
     /**
      * @return the size of the group of cards
      */
-    public int getSize() {
+    public final int getSize() {
         return size;
     }
 
     /**
-     * @param givenSize the max size for the group of cards
+     * @param size the max size for the group of cards
      */
-    public void setSize(int givenSize) {
-        size = givenSize;
+    public final void setSize(int size) {
+        this.size = size;
+    }
+    
+    public final void setCards(ArrayList<Card> cards) {
+        this.cards = cards;
     }
 
 }//end class

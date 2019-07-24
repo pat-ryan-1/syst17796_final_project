@@ -14,15 +14,51 @@ package ca.sheridancollege.project;
  *
  * @author dancye, 2018
  */
-public abstract class Card {
-    //default modifier for child classes
+public final class Card {
+   
+    // We make the class immutable to simplify design and reduce the surface area
+    // for bugs.
+    private final CardColor color;
+    private final CardValue value;
 
     /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a
-     * regular playing card etc.
+     * 
+     * @param color colour of the card
+     * @param value value of the card. 
+     * 
+     * Note: Only wild and draw four may have colour wild. Furthermore, this is 
+     * the only colour they may have.
+     */
+    public Card(CardColor color, CardValue value) {
+        
+        if (color == CardColor.WILD) { // only wild and draw four can have this type.
+            if ((value != CardValue.WILD) || (value != CardValue.DRAW_FOUR)) {
+                throw new IllegalArgumentException("Invalid card constructed");
+            }
+        } else { // wild and draw four can ONLY be wild colour
+            if ((value == CardValue.WILD) || (value == CardValue.DRAW_FOUR)) {
+                throw new IllegalArgumentException("Invalid card constructed");
+            }
+        }
+        
+        // We have a valid card, so create it.
+        this.color = color;
+        this.value = value;
+    }
+    
+    /**
+     * @return A string representation of the card instance.
      */
     @Override
-    public abstract String toString();
+    public String toString() {
+        return "";
+    }
+    
+    public CardColor getColor() {
+        return color;
+    }
+    
+    public CardValue getValue() {
+        return value;
+    }
 }
