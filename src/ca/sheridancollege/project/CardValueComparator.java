@@ -14,7 +14,8 @@ import java.util.Comparator;
  * follows: 1-10 < wild < skip < draw two < draw four
  *
  * That is, if a deck is to be arranged according to colours, the red cards will
- * be first, then blue, yellow, and finally wild. @author Patrick Ryan
+ * be first, then blue, yellow, and finally wild. 
+ * @author Patrick Ryan
  */
 public class CardValueComparator implements Comparator<Card> {
 

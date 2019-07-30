@@ -10,7 +10,7 @@ package ca.sheridancollege.project;
 /**
  * This enumeration holds the possible types of card types for the Uno card game.
  * Each card must have a type.
- * @author pear
+ * @author Patrick Ryan
  */
 public enum CardValue {
     ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, WILD, SKIP, 

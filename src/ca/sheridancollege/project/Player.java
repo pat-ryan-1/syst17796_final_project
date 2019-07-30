@@ -13,6 +13,7 @@ package ca.sheridancollege.project;
  * which should be unique.
  *
  * @author dancye, 2018
+ * @modified Patrick Ryan
  */
 public abstract class Player {
 

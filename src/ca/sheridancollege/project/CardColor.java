@@ -10,7 +10,7 @@ package ca.sheridancollege.project;
 /**
  * This enumeration holds the possible types of card colours for the Uno card game.
  * Each card must have a colour.
- * @author pear
+ * @author Patrick Ryan
  */
 public enum CardColor {
     GREEN, RED, BLUE, YELLOW, WILD;

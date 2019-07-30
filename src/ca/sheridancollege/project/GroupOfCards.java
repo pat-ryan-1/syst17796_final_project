@@ -15,14 +15,17 @@ import java.util.Collections;
  * size attribute which is flexible for reuse.
  *
  * @author dancye
+ * @modified Patrick Ryan
  */
 public abstract class GroupOfCards {
 
-    private int size;
     private ArrayList<Card> cards;
 
-    public GroupOfCards(int size) {
-        this.size = size;
+    public GroupOfCards() {
+    }
+
+    public GroupOfCards(ArrayList<Card> cards) {
+        this.cards = cards;
     }
 
     /**
@@ -34,6 +37,9 @@ public abstract class GroupOfCards {
         return cards;
     }
 
+    /**
+     * Shuffle the cards within the group into a random order.
+     */
     public void shuffle() {
         Collections.shuffle(cards);
     }
@@ -42,18 +48,56 @@ public abstract class GroupOfCards {
      * @return the size of the group of cards
      */
     public final int getSize() {
-        return size;
+        return cards.size();
+    }
+
+    public final void setCards(ArrayList<Card> cards) {
+        this.cards = cards;
     }
 
     /**
-     * @param size the max size for the group of cards
+     *
+     * @param index
+     * @return desired card
+     * @throws IllegalArgumentException if index is out of bounds
      */
-    public final void setSize(int size) {
-        this.size = size;
+    public Card get(int index) throws IllegalArgumentException {
+
+        if (index >= getSize()) {
+            throw new IllegalArgumentException("Invalid card index");
+        }
+
+        return cards.get(index);
+    }
+
+    public void add(Card card) {
+        cards.add(card);
+    }
+
+    public boolean isEmpty() {
+        return cards.isEmpty();
     }
     
-    public final void setCards(ArrayList<Card> cards) {
-        this.cards = cards;
+    /**
+     * 
+     * @param index of card to be removed and returned
+     * @return selected card
+     * @throws IllegalArgumentException if the index is out of bounds.
+     */
+    public Card remove(int index) throws IllegalArgumentException {
+        
+        if (index >= getSize()) {
+            throw new IllegalArgumentException("Invalid card index");
+        }
+        
+        return cards.remove(index);
+    }
+    
+    /**
+     * Empty the GroupOfCards
+     */
+    public void clear() {
+        cards.clear();
     }
 
 }//end class

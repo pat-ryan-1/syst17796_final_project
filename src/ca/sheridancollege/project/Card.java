@@ -13,6 +13,7 @@ package ca.sheridancollege.project;
  * code should remember to add themselves as a modifier.
  *
  * @author dancye, 2018
+ * @modified Patrick Ryan
  */
 public final class Card {
    
@@ -32,7 +33,7 @@ public final class Card {
     public Card(CardColor color, CardValue value) {
         
         if (color == CardColor.WILD) { // only wild and draw four can have this type.
-            if ((value != CardValue.WILD) || (value != CardValue.DRAW_FOUR)) {
+            if ((value != CardValue.WILD) && (value != CardValue.DRAW_FOUR)) {
                 throw new IllegalArgumentException("Invalid card constructed");
             }
         } else { // wild and draw four can ONLY be wild colour
@@ -51,7 +52,7 @@ public final class Card {
      */
     @Override
     public String toString() {
-        return "";
+        return getColor() + " " + getValue();
     }
     
     public CardColor getColor() {
@@ -61,4 +62,26 @@ public final class Card {
     public CardValue getValue() {
         return value;
     }
+    
+    /**
+     * 
+     * Test equality between instance and another object.
+     * 
+     * @param other card instance
+     * @return true if other is equal to this instance
+     */
+    @Override
+    public boolean equals(Object other) {
+        
+        if (other == null) {
+            return false;
+        }
+        
+        if (other.getClass() != this.getClass()) {
+            return false;
+        }
+        
+        Card otherCard = (Card)other;
+        return color == otherCard.color && value == otherCard.value;
+    }   
 }
