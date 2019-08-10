@@ -15,17 +15,20 @@ package ca.sheridancollege.project;
  * @author dancye, 2018
  * @modified Patrick Ryan
  */
-public abstract class Player {
+public class Player {
 
     private String playerID; //the unique ID for this player
+    private Hand hand; //the unique ID for this player
 
     /**
      * A constructor that allows you to set the player's unique ID
      *
      * @param name the unique ID to assign to this player.
+     * @param hand the current hand of the player.
      */
-    public Player(String name) {
+    public Player(String name, Hand hand) {
         playerID = name;
+        this.hand = hand;
     }
 
     /**
@@ -43,11 +46,28 @@ public abstract class Player {
     public void setPlayerID(String givenID) {
         playerID = givenID;
     }
+    
+    public Hand getHand() {
+        return hand;
+    }
+    
+    public void setHand(Hand hand) {
+        this.hand = hand;
+    }
+    
+    public void addCardToHand(Card c) {
+        hand.add(c);
+    }
+    
+    public Card removeCardFromHand(Card c) {
+        hand.remove(hand.indexOf(c));
+        return c;
+    }
 
     /**
      * The method to be instantiated when you subclass the Player class with
      * your specific type of Player and filled in with logic to play your game.
      */
-    public abstract void play();
+    public void play() {}
 
 }

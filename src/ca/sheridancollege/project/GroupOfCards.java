@@ -99,5 +99,14 @@ public abstract class GroupOfCards {
     public void clear() {
         cards.clear();
     }
+    
+    /**
+     * Get the array index of card c
+     * @param c card to get index of
+     * @return index of card
+     */
+    public int indexOf(Card c) {
+        return cards.indexOf(c);
+    }
 
 }//end class
