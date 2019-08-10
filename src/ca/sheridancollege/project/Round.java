@@ -31,7 +31,6 @@ public class Round {
 
         Player currentPlayer = p1;
         Scanner input = new Scanner(System.in);
-
         while (p1.getHand().getSize() > 0 && p2.getHand().getSize() > 0) {
             int selection = getCardSelection(input);
             while (!playTurn(currentPlayer, selection, pcp)) {
