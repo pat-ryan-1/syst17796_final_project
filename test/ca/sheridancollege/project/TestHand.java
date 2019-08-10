@@ -64,6 +64,25 @@ public class TestHand {
         // ensure we are at an empty hand
         assertEquals(hand.getSize(), 0);
     }
+    
+        @Test
+    public void TestForEachLoop() {
+        ArrayList<Card> cards = new ArrayList<>();
+        cards.add(new Card(CardColor.WILD, CardValue.WILD));
+        cards.add(new Card(CardColor.WILD, CardValue.DRAW_FOUR));
+        cards.add(new Card(CardColor.RED, CardValue.ONE));
+        cards.add(new Card(CardColor.GREEN, CardValue.TWO));
+        cards.add(new Card(CardColor.BLUE, CardValue.THREE));
+        Hand hand = new Hand(cards);
+        
+        int i = 0;
+        for (Card card : hand) {
+            assertEquals(card, cards.get(i));
+            ++i;
+        }
+    }
+    
+    // Bad tests
 
     @Test(expected = IllegalArgumentException.class)
     public void TestEmptyGet() {
@@ -90,5 +109,5 @@ public class TestHand {
         hand.add(new Card(CardColor.WILD, CardValue.WILD));
         hand.remove(1);
     }
-
+    
 }

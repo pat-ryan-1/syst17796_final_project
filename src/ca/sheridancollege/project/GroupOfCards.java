@@ -8,6 +8,7 @@ package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 /**
  * A concrete class that represents any grouping of cards for a Game. HINT, you
@@ -17,7 +18,7 @@ import java.util.Collections;
  * @author dancye
  * @modified Patrick Ryan
  */
-public abstract class GroupOfCards {
+public abstract class GroupOfCards implements Iterable<Card> {
 
     private ArrayList<Card> cards;
 
@@ -107,6 +108,16 @@ public abstract class GroupOfCards {
      */
     public int indexOf(Card c) {
         return cards.indexOf(c);
+    }
+    
+    /**
+     * Implement enhanced for loop operations on GroupOfCards
+     * 
+     * @return iterator of the underlying container.
+     */
+    @Override
+    public Iterator<Card> iterator() {
+        return cards.iterator();
     }
 
 }//end class
