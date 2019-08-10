@@ -34,5 +34,4 @@ public class PlayedCardPile extends GroupOfCards {
     public void put(Card card) {
         add(card);
     }
-
 }
