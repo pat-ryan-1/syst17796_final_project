@@ -34,29 +34,105 @@ public class Deck extends GroupOfCards {
         Deck d = new Deck(new ArrayList<>());
 
         // Add two of each standard number cards, skip, and draw two for colours
-        for (int i = 0; i < 2; ++i) {
-            for (CardColor color : CardColor.values()) {
-                d.add(new Card(color, CardValue.ONE));
-                d.add(new Card(color, CardValue.TWO));
-                d.add(new Card(color, CardValue.THREE));
-                d.add(new Card(color, CardValue.FOUR));
-                d.add(new Card(color, CardValue.FIVE));
-                d.add(new Card(color, CardValue.SIX));
-                d.add(new Card(color, CardValue.SEVEN));
-                d.add(new Card(color, CardValue.EIGHT));
-                d.add(new Card(color, CardValue.NINE));
-                d.add(new Card(color, CardValue.SKIP));
-                d.add(new Card(color, CardValue.DRAW_TWO));
-                
-                // add wilds
-                d.add(new Card(CardColor.WILD, CardValue.WILD));
-                d.add(new Card(CardColor.WILD, CardValue.WILD));
-                d.add(new Card(CardColor.WILD, CardValue.DRAW_FOUR));
-                d.add(new Card(CardColor.WILD, CardValue.DRAW_FOUR));
-            }
-        }
-        
-        d.shuffle();
-        return d;
+        d.add(new Card(CardColor.BLUE, CardValue.ONE));
+        d.add(new Card(CardColor.BLUE, CardValue.TWO));
+        d.add(new Card(CardColor.BLUE, CardValue.THREE));
+        d.add(new Card(CardColor.BLUE, CardValue.FOUR));
+        d.add(new Card(CardColor.BLUE, CardValue.FIVE));
+        d.add(new Card(CardColor.BLUE, CardValue.SIX));
+        d.add(new Card(CardColor.BLUE, CardValue.SEVEN));
+        d.add(new Card(CardColor.BLUE, CardValue.EIGHT));
+        d.add(new Card(CardColor.BLUE, CardValue.NINE));
+        d.add(new Card(CardColor.BLUE, CardValue.SKIP));
+        d.add(new Card(CardColor.BLUE, CardValue.DRAW_TWO));
+        d.add(new Card(CardColor.GREEN, CardValue.ONE));
+        d.add(new Card(CardColor.GREEN, CardValue.TWO));
+        d.add(new Card(CardColor.GREEN, CardValue.THREE));
+        d.add(new Card(CardColor.GREEN, CardValue.FOUR));
+        d.add(new Card(CardColor.GREEN, CardValue.FIVE));
+        d.add(new Card(CardColor.GREEN, CardValue.SIX));
+        d.add(new Card(CardColor.GREEN, CardValue.SEVEN));
+        d.add(new Card(CardColor.GREEN, CardValue.EIGHT));
+        d.add(new Card(CardColor.GREEN, CardValue.NINE));
+        d.add(new Card(CardColor.GREEN, CardValue.SKIP));
+        d.add(new Card(CardColor.GREEN, CardValue.DRAW_TWO));
+        d.add(new Card(CardColor.RED, CardValue.ONE));
+        d.add(new Card(CardColor.RED, CardValue.TWO));
+        d.add(new Card(CardColor.RED, CardValue.THREE));
+        d.add(new Card(CardColor.RED, CardValue.FOUR));
+        d.add(new Card(CardColor.RED, CardValue.FIVE));
+        d.add(new Card(CardColor.RED, CardValue.SIX));
+        d.add(new Card(CardColor.RED, CardValue.SEVEN));
+        d.add(new Card(CardColor.RED, CardValue.EIGHT));
+        d.add(new Card(CardColor.RED, CardValue.NINE));
+        d.add(new Card(CardColor.RED, CardValue.SKIP));
+        d.add(new Card(CardColor.RED, CardValue.DRAW_TWO));
+        d.add(new Card(CardColor.YELLOW, CardValue.ONE));
+        d.add(new Card(CardColor.YELLOW, CardValue.TWO));
+        d.add(new Card(CardColor.YELLOW, CardValue.THREE));
+        d.add(new Card(CardColor.YELLOW, CardValue.FOUR));
+        d.add(new Card(CardColor.YELLOW, CardValue.FIVE));
+        d.add(new Card(CardColor.YELLOW, CardValue.SIX));
+        d.add(new Card(CardColor.YELLOW, CardValue.SEVEN));
+        d.add(new Card(CardColor.YELLOW, CardValue.EIGHT));
+        d.add(new Card(CardColor.YELLOW, CardValue.NINE));
+        d.add(new Card(CardColor.YELLOW, CardValue.SKIP));
+        d.add(new Card(CardColor.YELLOW, CardValue.DRAW_TWO));
+        d.add(new Card(CardColor.BLUE, CardValue.ONE));
+        d.add(new Card(CardColor.BLUE, CardValue.TWO));
+        d.add(new Card(CardColor.BLUE, CardValue.THREE));
+        d.add(new Card(CardColor.BLUE, CardValue.FOUR));
+        d.add(new Card(CardColor.BLUE, CardValue.FIVE));
+        d.add(new Card(CardColor.BLUE, CardValue.SIX));
+        d.add(new Card(CardColor.BLUE, CardValue.SEVEN));
+        d.add(new Card(CardColor.BLUE, CardValue.EIGHT));
+        d.add(new Card(CardColor.BLUE, CardValue.NINE));
+        d.add(new Card(CardColor.BLUE, CardValue.SKIP));
+        d.add(new Card(CardColor.BLUE, CardValue.DRAW_TWO));
+        d.add(new Card(CardColor.GREEN, CardValue.ONE));
+        d.add(new Card(CardColor.GREEN, CardValue.TWO));
+        d.add(new Card(CardColor.GREEN, CardValue.THREE));
+        d.add(new Card(CardColor.GREEN, CardValue.FOUR));
+        d.add(new Card(CardColor.GREEN, CardValue.FIVE));
+        d.add(new Card(CardColor.GREEN, CardValue.SIX));
+        d.add(new Card(CardColor.GREEN, CardValue.SEVEN));
+        d.add(new Card(CardColor.GREEN, CardValue.EIGHT));
+        d.add(new Card(CardColor.GREEN, CardValue.NINE));
+        d.add(new Card(CardColor.GREEN, CardValue.SKIP));
+        d.add(new Card(CardColor.GREEN, CardValue.DRAW_TWO));
+        d.add(new Card(CardColor.RED, CardValue.ONE));
+        d.add(new Card(CardColor.RED, CardValue.TWO));
+        d.add(new Card(CardColor.RED, CardValue.THREE));
+        d.add(new Card(CardColor.RED, CardValue.FOUR));
+        d.add(new Card(CardColor.RED, CardValue.FIVE));
+        d.add(new Card(CardColor.RED, CardValue.SIX));
+        d.add(new Card(CardColor.RED, CardValue.SEVEN));
+        d.add(new Card(CardColor.RED, CardValue.EIGHT));
+        d.add(new Card(CardColor.RED, CardValue.NINE));
+        d.add(new Card(CardColor.RED, CardValue.SKIP));
+        d.add(new Card(CardColor.RED, CardValue.DRAW_TWO));
+        d.add(new Card(CardColor.YELLOW, CardValue.ONE));
+        d.add(new Card(CardColor.YELLOW, CardValue.TWO));
+        d.add(new Card(CardColor.YELLOW, CardValue.THREE));
+        d.add(new Card(CardColor.YELLOW, CardValue.FOUR));
+        d.add(new Card(CardColor.YELLOW, CardValue.FIVE));
+        d.add(new Card(CardColor.YELLOW, CardValue.SIX));
+        d.add(new Card(CardColor.YELLOW, CardValue.SEVEN));
+        d.add(new Card(CardColor.YELLOW, CardValue.EIGHT));
+        d.add(new Card(CardColor.YELLOW, CardValue.NINE));
+        d.add(new Card(CardColor.YELLOW, CardValue.SKIP));
+        d.add(new Card(CardColor.YELLOW, CardValue.DRAW_TWO));
+
+        // add wilds
+        d.add(new Card(CardColor.WILD, CardValue.WILD));
+        d.add(new Card(CardColor.WILD, CardValue.WILD));
+        d.add(new Card(CardColor.WILD, CardValue.DRAW_FOUR));
+        d.add(new Card(CardColor.WILD, CardValue.DRAW_FOUR));
+        d.add(new Card(CardColor.WILD, CardValue.WILD));
+        d.add(new Card(CardColor.WILD, CardValue.WILD));
+        d.add(new Card(CardColor.WILD, CardValue.DRAW_FOUR));
+        d.add(new Card(CardColor.WILD, CardValue.DRAW_FOUR));
+        return null;
     }
 }
+
