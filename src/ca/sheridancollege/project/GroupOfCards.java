@@ -119,5 +119,16 @@ public abstract class GroupOfCards implements Iterable<Card> {
     public Iterator<Card> iterator() {
         return cards.iterator();
     }
+    
+    /**
+     * Override of equals method
+     * 
+     * @param other other group of cards
+     * @return true if two groups are equal, false otherwise.
+     */
+    @Override
+    public boolean equals(Object other) {
+        return cards.equals(((GroupOfCards)other).cards);
+    }
 
 }//end class

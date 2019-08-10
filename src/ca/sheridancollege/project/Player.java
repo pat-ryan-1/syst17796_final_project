@@ -68,10 +68,15 @@ public class Player {
         return c;
     }
 
-    /**
-     * The method to be instantiated when you subclass the Player class with
-     * your specific type of Player and filled in with logic to play your game.
-     */
-    public void play() {}
-
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof Player)) {
+            return false;
+        }
+        
+        Player player = (Player)other;
+        
+        return playerID.equals(player.playerID) && hand.equals(player.hand);
+        
+    }
 }
