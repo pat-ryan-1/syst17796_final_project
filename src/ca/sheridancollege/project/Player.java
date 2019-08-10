@@ -55,6 +55,10 @@ public class Player {
         this.hand = hand;
     }
     
+    public Card getCard(int index) {
+        return hand.get(index);
+    }
+    
     public void addCardToHand(Card c) {
         hand.add(c);
     }
