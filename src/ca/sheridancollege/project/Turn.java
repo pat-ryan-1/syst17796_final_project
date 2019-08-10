@@ -14,11 +14,10 @@ import java.util.Scanner;
 public class Turn {
 
     public static boolean playable(Card card, Card topCard) {
-        if (card.getColor() == topCard.getColor()) {
+        if (card.getColor() == topCard.getColor() 
+                || topCard.getColor() == CardColor.WILD) {
             return true;
         } else if (card.getValue() == topCard.getValue()) {
-            return true;
-        } else if (card.getColor() == CardColor.WILD){
             return true;
         } else {
             return false;
