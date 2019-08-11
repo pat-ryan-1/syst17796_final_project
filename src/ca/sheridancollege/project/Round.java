@@ -26,6 +26,10 @@ public class Round {
         pcp = new PlayedCardPile(new ArrayList<>());
         pcp.add(deck.draw());
         
+        // CLear the current hands of the players, if they exist
+        p1.getHand().clear();
+        p2.getHand().clear();
+        
         for (int i = 0; i < 7; ++i) {
             p1.addCardToHand(deck.draw());
             p2.addCardToHand(deck.draw());

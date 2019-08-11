@@ -19,6 +19,8 @@ public class Turn {
             return true;
         } else if (card.getValue() == topCard.getValue()) {
             return true;
+        } else if (card.getColor() == CardColor.WILD) {
+            return true;
         } else {
             return false;
         }
