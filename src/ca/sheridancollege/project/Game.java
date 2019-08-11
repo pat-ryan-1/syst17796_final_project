@@ -8,6 +8,7 @@
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * The class that models your game. You should create a more specific child of
@@ -15,14 +16,19 @@ import java.util.ArrayList;
  *
  * @author dancye, 2018
  */
-public abstract class Game {
-
+public class Game {
+    
+    private Player p1;
+    private Player p2;
+    private Round r1;
+    private Round r2;
     private final String gameName;
-    private ArrayList<Player> players;// the players of the game
 
-    public Game(String givenName) {
-        gameName = givenName;
-        players = new ArrayList();
+    public Game(String gameName, Player p1, Player p2) {
+        this.gameName = gameName;
+        this.p1 = p1;
+        this.p2 = p2;
+       
     }
 
     /**
@@ -33,27 +39,45 @@ public abstract class Game {
     }
 
     /**
-     * Play the game. This might be one method or many method calls depending on
-     * your game.
-     */
-    public abstract void play();
-
-    /**
      * When the game is over, use this method to declare and display a winning
      * player.
      */
-    public abstract void declareWinner();
-
-    public ArrayList<Player> getPlayers() {
-        return this.players;
+    public void declareWinner() {
+        r1 = new Round(p1, p2);
+        playRound(r1);
+        r2 = new Round(p1, p2);
+        playRound(r2);
+        if (playRound(r1).equals(playRound(r2))){
+            System.out.print("Winner of the game is " + playRound(r1));
+        } else {
+            Round r3 = new Round(p1, p2);
+            if (playRound(r3).equals(playRound(r1)) || 
+                    playRound(r3).equals(playRound(r2))) {
+                System.out.print("Winner of the game is " + playRound(r3));
+            }
+        }
+        
     }
-
-    /**
-     *
-     * @param players
-     */
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
+    
+    public Player playRound(Round round) {
+        Player winner = round.play();
+        return winner;
+    }
+    
+    public static void main (String [] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("What would you like to call this uno match?\n");
+        String gameName = input.nextLine();
+        System.out.print("Enter player one's name:\n");
+        String p1Name = input.nextLine();
+        System.out.print("Enter player two's name:\n");
+        String p2Name = input.nextLine();
+        
+        Player p1 = new Player(p1Name, new Hand(new ArrayList<Card>()));
+        Player p2 = new Player(p2Name, new Hand(new ArrayList<Card>()));
+        
+        Game game = new Game(gameName, p1, p2);
+        game.declareWinner();
     }
 
 }//end class
