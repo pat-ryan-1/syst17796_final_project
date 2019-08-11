@@ -132,7 +132,8 @@ public class Deck extends GroupOfCards {
         d.add(new Card(CardColor.WILD, CardValue.WILD));
         d.add(new Card(CardColor.WILD, CardValue.DRAW_FOUR));
         d.add(new Card(CardColor.WILD, CardValue.DRAW_FOUR));
-        return null;
+        d.shuffle();
+        return d;
     }
 }
 

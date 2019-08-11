@@ -137,7 +137,7 @@ public class Round {
         System.out.print("Which card would you like to play?");
 
         try {
-            int selection = input.nextInt() - 1;
+            int selection = input.nextInt();
             if (selection < 0 || selection >= max) {
                 throw new InputMismatchException("Invalid choice entered!");
             }
@@ -160,8 +160,8 @@ public class Round {
         System.out.print(cp.getHand());
         boolean playable = Turn.playable(cp.getCard(selection), pcp.getTop());
         if (playable) {
-            cp.removeCardFromHand(cp.getCard(selection));
-            pcp.add(cp.getCard(selection));
+            Card c = cp.removeCardFromHand(cp.getCard(selection));
+            pcp.add(c);
             System.out.println("Played card!");
             return true;
         } else {
@@ -177,7 +177,7 @@ public class Round {
      */
     public void displayTurnInfo(Player player) {
         // Display Cards in hand and who's turn it is
-        int i = 1;
+        int i = 0;
         System.out.println(player.getPlayerID());
 
         System.out.println("Your hand:");
