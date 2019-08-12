@@ -44,13 +44,16 @@ public class Game {
      */
     public void declareWinner() {
         r1 = new Round(p1, p2);
+        System.out.println("Starting Round 1");
         Player winner1 = playRound(r1);
+        System.out.println("Starting Round 2");
         r2 = new Round(p1, p2);
         Player winner2 = playRound(r2);
         if (winner1.equals(winner2)) {
             System.out.print("Winner of the game is " + winner1.getPlayerID());
         } else {
             Round r3 = new Round(p1, p2);
+            System.out.println("Starting Round 3");
             Player winner3 = playRound(r3);
             System.out.print("Winner of the game is " + winner3.getPlayerID());
         }

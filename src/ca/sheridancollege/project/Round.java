@@ -124,6 +124,7 @@ public class Round {
         } else {
             winner = p2;
         }
+        System.out.println("WOW! " + winner.getPlayerID() + " has won the game!");
         return winner;
     }
 
