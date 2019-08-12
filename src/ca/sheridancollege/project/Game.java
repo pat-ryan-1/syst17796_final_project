@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @author dancye, 2018
  */
 public class Game {
-    
+
     private Player p1;
     private Player p2;
     private Round r1;
@@ -28,7 +28,7 @@ public class Game {
         this.gameName = gameName;
         this.p1 = p1;
         this.p2 = p2;
-       
+
     }
 
     /**
@@ -44,27 +44,25 @@ public class Game {
      */
     public void declareWinner() {
         r1 = new Round(p1, p2);
-        playRound(r1);
+        Player winner1 = playRound(r1);
         r2 = new Round(p1, p2);
-        playRound(r2);
-        if (playRound(r1).equals(playRound(r2))){
-            System.out.print("Winner of the game is " + playRound(r1));
+        Player winner2 = playRound(r2);
+        if (winner1.equals(winner2)) {
+            System.out.print("Winner of the game is " + winner1.getPlayerID());
         } else {
             Round r3 = new Round(p1, p2);
-            if (playRound(r3).equals(playRound(r1)) || 
-                    playRound(r3).equals(playRound(r2))) {
-                System.out.print("Winner of the game is " + playRound(r3));
-            }
+            Player winner3 = playRound(r3);
+            System.out.print("Winner of the game is " + winner3.getPlayerID());
         }
-        
+
     }
-    
+
     public Player playRound(Round round) {
         Player winner = round.play();
         return winner;
     }
-    
-    public static void main (String [] args) {
+
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("What would you like to call this uno match?\n");
         String gameName = input.nextLine();
@@ -72,10 +70,10 @@ public class Game {
         String p1Name = input.nextLine();
         System.out.print("Enter player two's name:\n");
         String p2Name = input.nextLine();
-        
-        Player p1 = new Player(p1Name, new Hand(new ArrayList<Card>()));
-        Player p2 = new Player(p2Name, new Hand(new ArrayList<Card>()));
-        
+
+        Player p1 = new Player(p1Name, new Hand(new ArrayList<>()));
+        Player p2 = new Player(p2Name, new Hand(new ArrayList<>()));
+
         Game game = new Game(gameName, p1, p2);
         game.declareWinner();
     }

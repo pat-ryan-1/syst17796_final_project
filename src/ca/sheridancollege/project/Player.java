@@ -76,7 +76,7 @@ public class Player {
         
         Player player = (Player)other;
         
-        return playerID.equals(player.playerID) && hand.equals(player.hand);
+        return playerID.equals(player.playerID);
         
     }
 }
